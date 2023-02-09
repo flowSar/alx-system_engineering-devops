@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo ls -l_who_am_i
+whoami
