@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo chmod -R +x dir0
+sudo chmod -R +rx dir0
