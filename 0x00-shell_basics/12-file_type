@@ -1,3 +1,2 @@
 #!/bin/bash
-touch iamafile
-file iamafile
+sudo touch /tmp/iamafile & file iamafile
