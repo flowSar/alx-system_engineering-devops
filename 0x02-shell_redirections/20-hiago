@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Chicago" | sed -e 's/c//g' -e 's/C//g'
+tr -d cC
