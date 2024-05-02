@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Iterate using a for loop to print the best Scholl 10 times
+str="Best School" 
+
+for((i=0; i<10; i++))
+do
+	echo "$str"
+done
