@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Iterate using a until loop to print best Scholl 10 times
+
+str="Best School"
+
+count=0
+
+until [ $count -gt 9 ]
+do
+    echo "$str"
+    ((count++))
+done
