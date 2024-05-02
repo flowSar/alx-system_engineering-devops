@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Iterate using a while loop to print best Scholl 10 times
+str="Best School"  
+
+count=0
+
+while [ $count -le 9 ]
+do
+    echo "$str"
+    ((count++))
+done
