@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Iterate using a while loop to print best Scholl except when count is 9 we print HI
+str="Best School"  
+
+count=1
+
+while [ $count -le 10 ]
+do
+    if [ $count -eq 9 ]; then
+        echo "HI"
+    else
+        echo "$str"
+    fi
+    
+    ((count++))
+done
