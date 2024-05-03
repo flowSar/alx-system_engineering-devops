@@ -1,2 +1,10 @@
 #!/usr/bin/env bash
-# comment
+# print "To infinity and beyond" each after 2s indefiniety, infinity loop
+
+count=0
+
+while [ $count -le 0 ]
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
