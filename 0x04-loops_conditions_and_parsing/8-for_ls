@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Iterate using a for loop through all files in current
+# directory and print then in a list format
+
+for file in *; do
+
+    if [[ ! "$file" =~ ^\. ]]; then
+        file_name=$(echo "$file" | cut -d'-' -f2-)
+        echo "$file_name"
+    fi
+done
