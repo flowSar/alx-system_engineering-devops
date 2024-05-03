@@ -7,11 +7,10 @@ count=1
 
 while [ $count -le 10 ]
 do
-    if [ $count -eq 9 ]; then
+    if [ $count -eq 10 ]; then
         echo "HI"
-    else
-        echo "$str"
     fi
+        echo "$str"
     
     ((count++))
 done

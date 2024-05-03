@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Iterate using a while loop to print best Scholl
 # except when count is 4 we print bad luck and when count=8 good look
-
+str="Best School" 
 count=1
 
 while [ $count -le 10 ]
