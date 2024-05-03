@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Iterate using a while loop to print numbers from 0 to 20
+# except after 4 and 9 and 17 we print rescpectively 
+# bad luck from China, bad luck from Japan, bad luck from China
+
+count=0
+count2=1
+
+while [ $count -le 60 ]
+do
+    if [ $count -eq 0 ]; then
+        echo "Hour: 0"
+    elif [ $count -eq 60 ]; then
+        echo "Hour: 1"
+        while [ $count2 -le 12 ]
+        do 
+            echo "$count2"
+            ((count2++))
+        done
+    else
+        echo "$count"
+    fi
+    ((count++))
+done
