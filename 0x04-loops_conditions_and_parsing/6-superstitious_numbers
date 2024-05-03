@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Iterate using a while loop to print numbers from 0 to 20
+# except after 4 and 9 and 17 we print rescpectively 
+# bad luck from China, bad luck from Japan, bad luck from China
+
+count=1
+
+while [ $count -le 20 ]
+do
+    case $count in
+    5)
+        echo "bad luck from China"
+    ;;
+    10)
+        echo "bad luck from Japan"
+    ;;
+    18)
+        echo "bad luck from China"
+    ;;
+    esac
+    echo "$count"
+    ((count++))
+done
