@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# this script for printing all running process a filter it using grep
+# this script for using grep to filter ps aux output
 # shellcheck disable=SC2009
 ps aux | grep "bash"
