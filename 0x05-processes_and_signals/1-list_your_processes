@@ -1,0 +1,4 @@
+#!/bin/bash
+# this script print all process for all useres and process hierarchy
+
+ps aux
