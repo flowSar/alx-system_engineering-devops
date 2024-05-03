@@ -4,7 +4,8 @@
 
 function handl_signl()
 {
-    echo "I am invincible!!!"
+    echo "Killed"
+    exit 0
 }
 
 while true

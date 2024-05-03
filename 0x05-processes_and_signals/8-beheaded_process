@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-# comment
+# this script for kill previous script 7-highlander
+
+pkill -f 7-highlander
