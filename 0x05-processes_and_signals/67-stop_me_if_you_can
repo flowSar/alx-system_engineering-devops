@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this script is for kill a process of our previours program using pkill
+# When -f is set, the full command line is used.
+pkill -f 7-highlander

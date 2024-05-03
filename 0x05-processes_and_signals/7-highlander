@@ -1,2 +1,15 @@
 #!/usr/bin/env bash
-# comment
+# this script for listenning to linux singls like SIGTERM
+# and then print I am invincible!!! when single receivd
+
+function handl_signl()
+{
+    echo "I am invincible!!!"
+}
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+    trap handl_signl SIGTERM
+done
