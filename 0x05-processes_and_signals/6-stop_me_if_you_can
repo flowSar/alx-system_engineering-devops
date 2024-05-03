@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-# comment
+# this script is for kill a process of our previours program using pkill
+# When -f is set, the full command line is used.
+pkill -f 4-to_infinity_and_beyond
