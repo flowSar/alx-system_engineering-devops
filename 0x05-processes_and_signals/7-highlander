@@ -4,7 +4,12 @@
 
 function handl_signl()
 {
-    echo "Killed"
+    echo "I am invincible!!!"
+}
+
+function handl_p_signl()
+{
+    echo "killed"
     exit 0
 }
 
@@ -13,4 +18,5 @@ do
     echo "To infinity and beyond"
     sleep 2
     trap handl_signl SIGTERM
+    trap handl_p_signl SIGUSR1
 done
