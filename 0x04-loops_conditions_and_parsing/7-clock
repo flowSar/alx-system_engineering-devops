@@ -4,18 +4,16 @@
 
 count=0
 count2=1
+hour=1
 
-while [ $count -le 60 ]
+while true
 do
     if [ $count -eq 0 ]; then
         echo "Hour: 0"
     elif [ $count -eq 60 ]; then
-        echo "Hour: 1"
-        while [ $count2 -le 12 ]
-        do 
-            echo "$count2"
-            ((count2++))
-        done
+        echo "Hour: $hour"
+        ((hour++))
+        count=0
     else
         echo "$count"
     fi
