@@ -15,7 +15,7 @@ do
         echo "bad luck from Japan"
     ;;
     18)
-        echo "bad luck from China"
+        echo "bad luck from italy"
     ;;
     esac
     echo "$count"
