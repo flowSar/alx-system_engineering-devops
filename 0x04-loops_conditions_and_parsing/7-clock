@@ -5,12 +5,14 @@
 count=0
 hour=1
 
-while true
+while [ $hour -le 13 ]
 do
     if [ $count -eq 0 ]; then
         echo "Hour: 0"
     elif [ $count -eq 60 ]; then
-        echo "Hour: $hour"
+        if [ $hour -lt 13 ]; then
+            echo "Hour: $hour"
+        fi
         ((hour++))
         count=0
     else
