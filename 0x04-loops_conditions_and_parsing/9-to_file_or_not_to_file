@@ -18,5 +18,9 @@ then
         echo "school is a regular file"
     fi
 else
-    echo "school file does not exist"
+    if test -d $file; then
+        echo "school exists but it’s a directory"
+    else
+        echo "school file does not exist"
+    fi
 fi
