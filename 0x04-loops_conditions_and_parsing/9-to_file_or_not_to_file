@@ -2,7 +2,6 @@
 # this script for checking existsance of a file and if it's empty
 # and if he's a regular file 
 
-content=""
 file="school"
 
 if test -f "$file" || test -d $file
