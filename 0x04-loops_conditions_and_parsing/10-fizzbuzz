@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# print numbers from 1 to 100 and print FizzBuzz and Fizz Buzz 
+# when this numbers is is a multiple of 3 and 5 or 3 or 5 respectively
+
+for i in {1..100}
+do
+    by_5=$((i % 5))
+    by_3=$((i % 3))
+    if [ 0 -eq "$by_3" ] && [ 0 -eq "$by_5" ]; then
+        echo "FizzBuzz"
+    elif [ 0 -eq "$by_3" ]; then
+        echo "Fizz"
+    elif [ 0 -eq "$by_5" ]; then
+        echo "Buzz"
+    else
+        echo "$i"
+    fi
+
+done
