@@ -2,7 +2,7 @@
 
 arg=ARGV[0]
 
-pattern = /(^(hb))(t+)n$/
+pattern = /(^(hb))(t){2,}n$/
 
 if arg.nil?
     puts "enter argument"
