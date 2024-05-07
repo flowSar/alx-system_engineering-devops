@@ -2,7 +2,7 @@
 
 arg=ARGV[0]
 
-pattern = /((h)(b*)(tn))$/
+pattern = /(h)(b*)(tn)$/
 
 if arg.nil?
     puts "enter argument"
@@ -10,6 +10,4 @@ if arg.nil?
 end
 
 result = arg.scan(pattern)
-
-puts "#{result.join("")}"
-
+puts result
