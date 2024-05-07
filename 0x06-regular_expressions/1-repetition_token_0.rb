@@ -2,7 +2,7 @@
 
 arg=ARGV[0]
 
-pattern = /(^(hb))(t){2,}n$/
+pattern = /(^(hb))(t{2,})n$/
 
 if arg.nil?
     puts "enter argument"
@@ -11,5 +11,6 @@ end
 
 result = arg.match(pattern)
 puts result
+# puts "#{result[0]}"
 
 
