@@ -2,7 +2,7 @@
 
 arg=ARGV[0]
 
-pattern = /(hb)(t+)n$/
+pattern = /(^(hb))(t+)n$/
 
 if arg.nil?
     puts "enter argument"
@@ -11,3 +11,5 @@ end
 
 result = arg.match(pattern)
 puts result
+
+
