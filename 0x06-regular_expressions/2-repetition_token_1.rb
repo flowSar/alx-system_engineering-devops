@@ -10,6 +10,6 @@ if arg.nil?
 end
 
 result = arg.scan(pattern)
-# puts result
+
 puts "#{result.join("")}"
 
