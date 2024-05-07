@@ -2,15 +2,8 @@
 
 arg=ARGV[0]
 
-pattern = /(^(hb))(t{2,})n$/
+pattern = /^(hb)(t{2,})(n)$/
 
-if arg.nil?
-    puts "enter argument"
-    exit
-end
-
-result = arg.match(pattern)
-puts result
-# puts "#{result[0]}"
+puts ARGV[0].scan(pattern).join
 
 
