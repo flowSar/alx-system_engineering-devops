@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-pattern = /hb(?:t{,4})n/
+pattern = /hb(?:t*)n/
 
 puts ARGV[0].scan(pattern).join
