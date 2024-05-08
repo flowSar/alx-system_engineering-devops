@@ -6,4 +6,4 @@ argument = ARGV[0]
 
 matches = argument.scan(pattern)
 
-puts "#{matches.join(", ")}"
+puts "#{matches.join(",")}"
