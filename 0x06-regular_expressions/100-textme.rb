@@ -1,9 +1,10 @@
 #!/usr/bin/env ruby
 
-pattern = /(?:from:\w+\S+)|(?:to:\+?\d{11})|(?:flags:-?\d:-?\d:-?\d:-?\d:-?\d)/
+pattern = /(?<=from:)(?:\w+)|(?<=to:)(?:\+?\d{11})|(?<=flags:)(?:-?\d:-?\d:-?\d:-?\d:-?\d)/
+pattern2 = /:\w+/
 
 argument = ARGV[0]
 
 matches = argument.scan(pattern)
-
-puts "#{matches.join(",")}"
+result = matches.join(",")
+puts result
