@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-# comment
+# this command will list listing ports on linux/unix ans and active domain socket.
+netstat -lp
