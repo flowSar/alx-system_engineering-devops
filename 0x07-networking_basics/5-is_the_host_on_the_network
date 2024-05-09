@@ -3,10 +3,9 @@
 
 ip_adress=$1
 
-if [ -z $ip_adress ]; then
+if [ -z "$ip_adress" ]; then
     echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
 
 else
-    ping -c 5 $ip_adress
+    ping -c 5 "$ip_adress"
 fi
-
