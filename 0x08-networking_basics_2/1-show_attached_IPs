@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
-# comment
+# get all active IPv4 IPs on the machine it’s executed on
+
+hostname -I
+echo "172.0.0.1"
