@@ -2,5 +2,5 @@
 # change ip adress of localhost and facebook on the host.
 cp /etc/hosts ~/hosts.new
 sudo sed -i 's/127\.0\.0\.1/127\.0\.0\.2/g' ~/hosts.new
-echo "8.8.8.8       157.240.11.35" >> ~/hosts.new
+sudo echo "8.8.8.8       157.240.11.35" >> ~/hosts.new
 cp -f ~/hosts.new /etc/hosts
