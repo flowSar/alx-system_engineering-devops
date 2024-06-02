@@ -1,0 +1,17 @@
+
+diagram link : https://docs.google.com/drawings/d/1aTv72COiDP75Bk5vBGXO8K_ONM2EpvcP5PTX2bFpR0k/edit?usp=sharing
+
+What is a server: server is remote computer system or a software that provides services to a client or to other computers
+like file storage , database managment, application running or web hosting in a netwrok. and this server can be in data center or a local sever.
+
+What is the role of the domain name: is to provide a human readable address that maps to ip adress that was used by
+computers on a network.
+
+What is the role of the web server: handle http request, return static web page and files from server file system, return dynamic content
+by interaction with app server monitoring of requests.
+
+What is the role of the application server. handel dynamic content and he can interact with databases and do busnisses logic
+
+What is the role of the database :store data in a table form.
+
+What is the server using to communicate with the computer of the user requesting the website: http protocol.

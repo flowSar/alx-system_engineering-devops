@@ -1,0 +1,10 @@
+
+diagram link: https://docs.google.com/drawings/d/1L4g5vg9Gi2ggj__W2ZtcxekK7czu2J-77YF2Mp97l1U/edit?usp=sharing
+
+What are firewalls for : protecting our network from unauthorized access , from hackers or malware .
+Why is the traffic served over HTTPS : to ensure the data transmitted between the website and user browser secure and private.
+What monitoring is used for : it helps for track the health and performance of webserver. 
+How the monitoring tool is collecting data: by using monitoring toosl lis agent-based monitoring, API-based monitoring. log analysis.
+Explain what to do if you want to monitor your web server QPS:
+choose the monitoring tool , install monitoring agent configure the monitoring tool to collect QPS data from web server.
+set up a dashboard to visualize the QPS.

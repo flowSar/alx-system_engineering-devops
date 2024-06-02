@@ -1,0 +1,16 @@
+
+diagram link : https://docs.google.com/drawings/d/1HStEm_UDJ6G5RsPyW0-U_4spydXN9sPVr8D0JN-nBxE/edit?usp=sharing
+ 
+What distribution algorithm your load balancer is configured with and how it works : Round-Robin algorithm is works on distributing the request on multiple webserver 
+in sequential cycle order , for example if we have 3 servers it will go like 1,2,3,1,2,3,1,2,3
+
+Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both :active-Passive setup:
+until something happen to the active one to take over.
+
+How a database Primary-Replica (Master-Slave) cluster works : primary database is the main source of data and can accept insert,update,delte operation when 
+replica database (slave) is a copy of primary and it's read-only database.
+
+What is the difference between the Primary node and the Replica node in regard to the application :
+Replica node is a copy of primary node and each change happen to the primary node will aply to the replica node 
+but you can't make any change on replica node directly
+so if something happed to primary node the replica node will take over is like a back up.
