@@ -10,5 +10,4 @@ package {'python3-pip':
 exec { 'install_flask_specific_version':
   command => '/usr/bin/pip3 install Flask==2.0.1',
   require => Package['python3-pip'],
-  unless  => '/usr/bin/pip3 show Flask | grep "Version: 2.0.1"',
 }
