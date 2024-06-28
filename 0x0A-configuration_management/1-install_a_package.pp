@@ -5,7 +5,7 @@ package {'python3-pip':
 }
 
 # install flask version 2.1.0
-# first we run the unless command to check if flask instlled 
+# first we run the unless command to check if flask instlled
 # before running command
 exec { 'install_flask_2.1.0':
   command => '/usr/bin/pip3 install Flask==2.0.1',
