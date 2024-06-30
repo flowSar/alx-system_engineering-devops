@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # this create will create a keypair with size 4096 and with passphrase "betty"
 # and this keypair will store under school name
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/school -N "betty"
+ssh-keygen -t rsa -b 4096 -f ./school -N "betty"
