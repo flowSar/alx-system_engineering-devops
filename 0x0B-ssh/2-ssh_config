@@ -1,1 +1,8 @@
 #!/usr/bin/env bash
+# this is a configuration for connecting to remote server
+
+Host my_server
+    HostName 35.175.64.12
+    User ubuntu
+    port 22
+    IdentifyFile ./school
