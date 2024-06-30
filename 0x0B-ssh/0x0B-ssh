@@ -1,1 +1,5 @@
 #!/usr/bin/env bash
+# this script is for copying the public key to the server
+# to the file authorized_keys
+
+ssh-copy-id -i ./school.pub ubuntu@35.175.64.12
