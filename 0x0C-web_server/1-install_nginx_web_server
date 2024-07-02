@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# with this script we change the content of nginx main web page
+# to hello world!
+
+sudo apt update
+
+sudo apt-get -y install nginx
+
+sudo echo "Hello World!" > /var/www/html/index.nginx-debian.html
+
+exit
