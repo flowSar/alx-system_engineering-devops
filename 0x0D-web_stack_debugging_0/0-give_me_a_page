@@ -11,5 +11,6 @@ sudo docker run --name holbertonschool -d -p 8080:80 httpd
 # my mistake her in this command is echo it will run on the host not on docker 
 # sudo docker exec -it holbertonschool bash
 # echo "Hello Holberton" | sudo tee /usr/local/apache2/htdocs/index.html > /dev/null
+sleep 5
 
 sudo docker exec holbertonschool bash -c 'echo "Hello Holberton" > /usr/local/apache2/htdocs/index.html'
