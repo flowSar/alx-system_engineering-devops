@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# add custome error page 
+sudo apt-get update
+
+sudo apt-get install -y nginx
+
+echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
+
+sudo sed -i "30i $rediect" /etc/nginx/sites-available/default
+
+
+echo "Ceci n'est pas une page." | sudo tee /var/www/html/404.html > /dev/null
+
+sudo sed -i '32i\ \ \ error_page 404 /404.html;\n\ \ \ location = /404.html {\n\ \ \ \ \ internal;\n\ \ \ }' nginx.conf
+
+sudo nginx -s reload

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
+# redirect from redirect_me to URL=youtube permanently
 
-
-rediect="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+redirect="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
 
 
 sudo apt-get update
@@ -10,6 +10,6 @@ sudo apt-get install -y nginx
 
 echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
 
-sudo sed -i "30i $rediect" /etc/nginx/sites-available/default
+sudo sed -i "30i $redirect" /etc/nginx/sites-available/default
 
 sudo nginx -s reload
