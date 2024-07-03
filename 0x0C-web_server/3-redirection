@@ -10,6 +10,6 @@ sudo apt-get install -y nginx
 
 echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
 
-sudo sed -i "30i $redirect" /etc/nginx/sites-available/default
+sudo sed -i "29i $redirect" /etc/nginx/sites-available/default
 
 sudo nginx -s reload
