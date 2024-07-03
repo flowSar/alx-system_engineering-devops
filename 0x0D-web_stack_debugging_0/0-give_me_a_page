@@ -9,7 +9,8 @@
 sudo docker run --name holbertonschool -d -p 8080:80 httpd
 
 # sudo docker exec -it holbertonschool bash
-# 
 # echo "Hello Holberton" | sudo tee /usr/local/apache2/htdocs/index.html > /dev/null
 
 sudo docker exec holbertonschool bash -c 'echo "Hello Holberton" > /usr/local/apache2/htdocs/index.html'
+
+curl localhost:8080
