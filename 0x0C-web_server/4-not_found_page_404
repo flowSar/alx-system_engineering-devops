@@ -14,6 +14,5 @@ sudo sed -i "29i $redirect" /etc/nginx/sites-available/default
 
 echo "Ceci n'est pas une page." | sudo tee /var/www/html/404.html > /dev/null
 
-sudo sed -i '31i\ \ \ error_page 404 /404.html;\n\ \ \ location = /404.html {\n\ \ \ \ \ internal;\n\ \ \ }' nginx.conf
-
+sudo sed -i '31i\ \ \ error_page 404 /404.html;\n\ \ \ location = /404.html {\n\ \ \ \ \ internal;\n\ \ \ }' /etc/nginx/sites-available/default
 sudo nginx -s reload
