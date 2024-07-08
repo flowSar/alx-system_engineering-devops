@@ -5,6 +5,8 @@ sudo apt-get update
 
 sudo apt-get install -y nginx
 
+sudo cp $FONFIG_FILE ${FONFIG_FILE}.bak
+
 HOSTNAME=$(hostname)
 FONFIG_FILE="/etc/nginx/sites-available/default"
 
