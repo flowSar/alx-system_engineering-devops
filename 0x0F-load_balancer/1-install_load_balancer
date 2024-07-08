@@ -8,9 +8,9 @@ sudo apt-get install -y haproxy
 STUDENT_ID="269106"
 WEB_01="${STUDENT_ID}-web-01"
 WEB_02="${STUDENT_ID}-web-02"
-LB_NAME="${STUDENT_ID}-lb-01"
 
-sudo cat <<EOF >/etc/haproxy/haproxy.cfg
+
+cat <<EOF >/etc/haproxy/haproxy.cfg
 global
     log /dev/log local0
     log /dev/log local1 notice
