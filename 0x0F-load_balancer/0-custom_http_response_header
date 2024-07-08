@@ -7,10 +7,10 @@ HOSTNAME=$(hostname)
 FONFIG_FILE="/etc/nginx/sites-available/default"
 
 # update file index
-# sudo apt-get update
+sudo apt-get update
 
 # install nginx
-# sudo apt-get install -y nginx
+sudo apt-get install -y nginx
 
 # make a backup copy for config file
 sudo cp $FONFIG_FILE ${FONFIG_FILE}.bak
