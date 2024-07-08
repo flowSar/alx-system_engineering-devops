@@ -1,0 +1,25 @@
+
+
+	hello
+
+http {
+
+    server {
+	 	fuck
+
+
+    
+    
+    }
+}
+
+sudo sed -i '/server {/a '"$CUSTOM_HEADER"'' /etc/nginx/sites-available/default
+	 	fuck
+	 \tfuck
+	\tfuck
+fuck
+
+
+
+
+
