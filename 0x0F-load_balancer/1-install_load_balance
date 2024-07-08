@@ -1,13 +1,49 @@
 #!/usr/bin/env bash
+# install HAProxy and Configure HAproxy so that it send traffic to web-01 and web-02
+# using load balance round robing algorithm
 
 sudo apt-get update
+sudo apt-get install -y haproxy
 
-sudo apt-get install -y nginx
+STUDENT_ID="269106"
+WEB_01="${STUDENT_ID}-web-01"
+WEB_02="${STUDENT_ID}-web-02"
+LB_NAME="${STUDENT_ID}-lb-01"
 
-header="\ \ \t add_header X-Served-By {$hostname};"
+sudo cat <<EOF >/etc/haproxy/haproxy.cfg
+global
+    log /dev/log local0
+    log /dev/log local1 notice
+    maxconn 2000
+    user haproxy
+    group haproxy
+    daemon
 
-sudo sed -i "36i $header" /etc/nginx/sites-available/default
+defaults
+    log global
+    mode http
+    option httplog
+    option dontlognull
+    timeout connect 5000ms
+    timeout client 50000ms
+    timeout server 50000ms
+    errorfile 400 /etc/haproxy/errors/400.http
+    errorfile 403 /etc/haproxy/errors/403.http
+    errorfile 408 /etc/haproxy/errors/408.http
+    errorfile 500 /etc/haproxy/errors/500.http
+    errorfile 502 /etc/haproxy/errors/502.http
+    errorfile 503 /etc/haproxy/errors/503.http
+    errorfile 504 /etc/haproxy/errors/504.http
 
-sudo nginx -s reload
+frontend http_front
+    bind *:80
+    stats uri /haproxy?stats
+    default_backend webservers
 
-sudo service nginx restart
+backend webservers
+    balance roundrobin
+    server ${WEB_01} 54.237.7.136:80 check
+    server ${WEB_02} 54.85.9.73:80 check
+EOF
+
+systemctl restart haproxy
