@@ -12,9 +12,9 @@ echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
 sudo sed -i "29i $redirect" /etc/nginx/sites-available/default
 
 
-echo "Ceci n'est pas une page\n" | sudo tee /var/www/html/404.html > /dev/null
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html > /dev/null
 
-sudo sed -i '30i\ \ \ error_page 404 /404.html;\n\ \ \ location = /404.html {\n\ \ \ \ \ internal;\n\ \ \ }' /etc/nginx/sites-available/default
+sudo sed -i '31i\ \ \ \t error_page 404 /404.html;\n\ \ \ \t location = /404.html {\n\ \ \ \ \ \t \t internal;\n\ \ \ \t }' /etc/nginx/sites-available/default
 sudo nginx -s reload
 
 sudo service nginx restart
