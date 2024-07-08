@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
+# this script for installing nginx on serever and adding a new header
+# to the srever
+sudo apt-get update
 
-# sudo apt-get update
-# 
-# sudo apt-get install -y nginx
+sudo apt-get install -y nginx
 
-header="add_header X-Served-By ${hostname};"
+HOSTNAME=$(hostname)
+
+header="add_header X-Served-By $HOSTNAME;"
 
 sudo sed -i "/server {/a \\\t$header" /etc/nginx/sites-available/default
 
 sudo nginx -s reload
 
 sudo service nginx restart
-
