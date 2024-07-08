@@ -16,3 +16,5 @@ echo "Ceci n'est pas une page\n" | sudo tee /var/www/html/404.html > /dev/null
 
 sudo sed -i '31i\ \ \ error_page 404 /404.html;\n\ \ \ location = /404.html {\n\ \ \ \ \ internal;\n\ \ \ }' /etc/nginx/sites-available/default
 sudo nginx -s reload
+
+sudo service nginx restart
