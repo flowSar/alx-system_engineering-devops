@@ -23,5 +23,6 @@ backend webservers
     server ${WEB_01} 35.175.64.12:80 check
     server ${WEB_02} 18.234.192.156:80 check
 EOF
-
-sudo haproxy -f haproxy.cfg
+# this another way or spining a haproxy file
+# sudo haproxy -f haproxy.cfg
+sudo service haproxy restart
