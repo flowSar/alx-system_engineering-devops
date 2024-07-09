@@ -5,10 +5,11 @@ sudo apt-get update
 
 sudo apt-get install -y nginx
 
+FONFIG_FILE="/etc/nginx/sites-available/default"
+
 sudo cp $FONFIG_FILE ${FONFIG_FILE}.bak
 
 HOSTNAME=$(hostname)
-FONFIG_FILE="/etc/nginx/sites-available/default"
 
 header="add_header X-Served-By $HOSTNAME;"
 
