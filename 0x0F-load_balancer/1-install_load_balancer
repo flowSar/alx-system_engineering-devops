@@ -24,4 +24,4 @@ backend webservers
     server ${WEB_02} 18.234.192.156:80 check
 EOF
 
-sudo service haproxy restart
+sudo haproxy -f haproxy.cfg
