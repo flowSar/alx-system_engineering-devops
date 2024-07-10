@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 # in this script we create apache container with name holbertonschool and host port 8080
-# so we can acces to this container on local host
-# we execute bash command on the container
-# navigate to htdocs were the main page it stored
-# use echo to change the content of the page to Hello Holberton
-# exit from the continer
 
-sudo docker run --name holbertonschool -d -p 8080:80 httpd
-
-sleep 5
-
-sudo docker exec -it holbertonschool /bin/bash -c 'echo "Hello Holberton" > /usr/local/apache2/htdocs/index.html'
+echo "Hello Holberton" >> /etc/apache2/apache2.conf
+service apache2 start
