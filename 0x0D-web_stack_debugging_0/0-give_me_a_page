@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # in this script we create apache container with name holbertonschool and host port 8080
 
-echo "Hello Holberton" >> /etc/apache2/apache2.conf
+echo "Hello Holberton" >> /etc/apache2.conf
 service apache2 start
