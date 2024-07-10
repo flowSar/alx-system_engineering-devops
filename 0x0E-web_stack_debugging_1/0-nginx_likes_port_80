@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-# ng
+# to fix the problem with need to make sure the container port is mapped to host port
+sudo docker run -d --name nginx -p 80:80 nginx
