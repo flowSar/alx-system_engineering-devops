@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # stop and remove all container and create nw one
-docker stop $(docker ps --filter "publish=80" --format "{{.ID}}")
-docker rm $(docker ps --filter "publish=80" --format "{{.ID}}")
+docker stop $(docker ps --filter "publish=80" --format "{{.ID}}") > /dev/null
+docker rm $(docker ps --filter "publish=80" --format "{{.ID}}") > /dev/null
 sudo docker run -d --name nginx -p 80:80 nginx > /dev/null
