@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # to fix the problem with need to make sure the container port is mapped to host port
-docker stop $(docker ps -q)
-docker rm $(docker ps -a -q)
+docker stop $(docker ps --filter "publish=80" --format "{{.ID}}")
+docker rm $(docker ps --filter "publish=80" --format "{{.ID}}")
 sudo docker run -d --name nginx -p 80:80 nginx > /dev/null
