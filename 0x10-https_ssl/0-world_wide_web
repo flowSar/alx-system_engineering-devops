@@ -1,1 +1,30 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
+# in this script we use dig command to fetch some dns info like recored RECORD_TYPe
+# and ip adress of subdomains
+DOMAIN=$1
+SUBDOMAIN=$2
+
+# fetch all subdomain info if no sub domain is giving
+print_all_wubdomain() {
+    subdomains=("www" "lb-01" "web-01" "web-02")
+    for sub in "${subdomains[@]}"; do
+        digingresult=$(dig +noall +answer "$sub.$1")
+        RECORD_TYPE=$(echo "$digingresult" | awk '{print $4}')
+        DESTINATION=$(echo "$digingresult" | awk '{print $5}')
+        echo "$sub is a $RECORD_TYPE record and points to $DESTINATION"
+    done
+}
+# fetch subdomain info 
+print_giving_subdomain() {
+    digingresult=$(dig +noall +answer "$1")
+    RECORD_TYPE=$(echo "$digingresult" | awk '{print $4}')
+    DESTINATION=$(echo "$digingresult" | awk '{print $5}')
+    echo "$SUBDOMAIN is a $RECORD_TYPE record and points to $DESTINATION"
+}
+
+# check is subdomain is passed as a paramter and excute suitable func depend on
+if [ "$SUBDOMAIN" != "" ]; then
+    print_giving_subdomain "$SUBDOMAIN.$DOMAIN"
+else
+    print_all_wubdomain "$DOMAIN"
+fi
