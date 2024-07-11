@@ -11,7 +11,7 @@ print_all_wubdomain() {
         digingresult=$(dig +noall +answer "$sub.$1")
         RECORD_TYPE=$(echo "$digingresult" | awk '{print $4}')
         DESTINATION=$(echo "$digingresult" | awk '{print $5}')
-        echo "$sub is a $RECORD_TYPE record and points to $DESTINATION"
+        echo "The subdomain $sub is a $RECORD_TYPE record and points to $DESTINATION"
     done
 }
 # fetch subdomain info 
@@ -19,7 +19,7 @@ print_giving_subdomain() {
     digingresult=$(dig +noall +answer "$1")
     RECORD_TYPE=$(echo "$digingresult" | awk '{print $4}')
     DESTINATION=$(echo "$digingresult" | awk '{print $5}')
-    echo "$SUBDOMAIN is a $RECORD_TYPE record and points to $DESTINATION"
+    echo "The subdomain $SUBDOMAIN is a $RECORD_TYPE record and points to $DESTINATION"
 }
 
 # check is subdomain is passed as a paramter and excute suitable func depend on
