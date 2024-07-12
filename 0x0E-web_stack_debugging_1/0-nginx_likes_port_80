@@ -5,6 +5,6 @@
 #     sudo docker stop "$CONTAINER"
 #     sudo docker rm "$CONTAINER"
 # fi
-sudo systemctl stop nginx
-sudo systemctl stop httpd
-sudo docker run -d --name nginx -p 80:80 nginx > /dev/null
+sudo systemctl stop nginx > /dev/null
+sudo systemctl stop httpd > /dev/null
+sudo docker run -d -p 80:80 nginx > /dev/null
