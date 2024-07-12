@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 # to fix the problem with need to make sure the container port is mapped to host port
-CONTAINER=$(sudo docker ps --filter "publish=80" --format "{{.ID}}")
-if [ "$CONTAINER" != "" ]; then
-    sudo docker stop "$CONTAINER"
-fi
-sudo systemctl stop nginx > /dev/null
-sudo systemctl stop httpd > /dev/null
+# CONTAINER=$(sudo docker ps --filter "publish=80" --format "{{.ID}}")
+# if [ "$CONTAINER" != "" ]; then
+#     sudo docker stop "$CONTAINER"
+#     sudo docker rm "$CONTAINER"
+# fi
+sudo systemctl stop nginx
+sudo systemctl stop httpd
 sudo docker run -d --name nginx -p 80:80 nginx > /dev/null
