@@ -6,5 +6,5 @@ if [ "$CONTAINER" != "" ]; then
     sudo docker rm "$CONTAINER"
 fi
 sudo docker run -it --name ubuntu-nginx -p 80:80 ubuntu:latest /bin/bash
-sudo apt-get update
-sudo apt-get install -y nginx
+apt-get update
+apt-get install -y nginx
