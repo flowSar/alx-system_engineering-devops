@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 # to fix the problem with need to make sure the container port is mapped to host port
 CONTAINER=$(sudo docker ps --filter "publish=80" --format "{{.ID}}")
-echo "$CONTAINER"
 if [ "$CONTAINER" != "" ]; then
     sudo docker stop "$CONTAINER"
     sudo docker rm "$CONTAINER"
 fi
-sudo systemctl stop nginx > /dev/null
-sudo systemctl stop httpd > /dev/null
-sudo docker run -d -p 80:80 nginx > /dev/null
+sudo docker run -it --name ubuntu-nginx -p 80:80 ubuntu:latest /bin/bash
+sudo apt-get update
+sudo apt-get install -y nginx
