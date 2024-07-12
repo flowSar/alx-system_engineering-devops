@@ -8,3 +8,4 @@ fi
 sudo docker run -it --name ubuntu-nginx -p 80:80 ubuntu:latest /bin/bash
 apt-get update
 apt-get install -y nginx
+nginx
