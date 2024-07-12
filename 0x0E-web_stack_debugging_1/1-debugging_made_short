@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # chnage the port to 80
 FILEPATH="/etc/nginx/sites-available/default"
-if ! grep "listen 80;" "$FILEPATH"; then
+if ! grep -q "listen" "$FILEPATH"; then
     sudo sed -i 's/listen .*/listen 80;/' $FILEPATH
 fi
 sudo service nginx restart
