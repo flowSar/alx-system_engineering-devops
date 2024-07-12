@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 # to fix the problem with need to make sure the container port is mapped to host port
 # chnage the port to 80
-if ! grep -q 'listen 80;' /etc/nginx/sites-available/default; then
-
-    sed -i 's/listen .*/listen 80;/' /etc/nginx/sites-available/default
+FILEPATH="/etc/nginx/sites-available/default"
+if grep -q "listen" "$FILEPATH"; then
+    sudo sed -i 's/listen .*/listen 80;/' $FILEPATH
+else
+    sudo sed -i '/server {/a \\t \tlisten 80;' $FILEPATH
 fi
-service nginx restart
+sudo service nginx restart
