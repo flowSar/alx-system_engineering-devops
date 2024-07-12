@@ -1,9 +1,4 @@
 #!/usr/bin/env bash
-# chnage the port to 80
-FILEPATH="/etc/nginx/sites-available/default"
-if grep -q "listen 80;" "$FILEPATH"; then
-    sudo sed -i 's/listen .*/listen 80;/' $FILEPATH
-else
-    sudo sed -i '/server {/a \\tlisten 80;' $FILEPATH
-fi
-sudo service nginx restart
+# remove old file and copy file configuration from /etc/nginx/sites-enabled/default
+sudo rm /etc/nginx/sites-available/default
+sudp cp /etc/nginx/sites-enabled/default /etc/nginx/sites-available/
