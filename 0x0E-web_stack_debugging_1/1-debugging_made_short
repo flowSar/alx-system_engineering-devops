@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
-# stop and remove all container and create nw one
-CONTAINER=$(sudo docker ps --filter "publish=80" --format "{{.ID}}")
-echo "$CONTAINER"
-if [ "$CONTAINER" != "" ]; then
-    sudo docker stop "$CONTAINER"
-    sudo docker rm "$CONTAINER"
+# chnage the port to 80
+FILEPATH="/etc/nginx/sites-available/default"
+if ! grep "listen 80;" "$FILEPATH"; then
+    sudo sed -i 's/listen .*/listen 80;/' $FILEPATH
 fi
-sudo systemctl stop nginx > /dev/null
-sudo systemctl stop httpd > /dev/null
-sudo docker run -d -p 80:80 nginx > /dev/null
+sudo service nginx restart
