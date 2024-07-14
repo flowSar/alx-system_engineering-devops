@@ -2,6 +2,8 @@
 # to fix the problem with need to make sure the container port is mapped to host port
 # chnage the port to 80
 FILEPATH="/etc/nginx/sites-available/default"
+sudo apt update
+sudo apt -y install nginx
 if grep -q "listen" "$FILEPATH"; then
     sudo sed -i 's/listen .*/listen 80;/' $FILEPATH
 else
