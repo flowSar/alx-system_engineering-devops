@@ -6,6 +6,6 @@
 running=$(sudo docker ps -q)
 if [ -n "$running" ]; then
     sudo docker stop "$running" > /dev/null
-    sudo docker rm myInginx > /dev/null
+    sudo docker rm "$running" > /dev/null
 fi
 sudo docker run -d --name myInginx -p 80:80 nginx
