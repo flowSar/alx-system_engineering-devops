@@ -5,6 +5,6 @@ sudo apt update
 sudo apt -y install docker
 running=$(sudo docker ps -q)
 if "$running" != ''; then
-    sudo docker stop $running
+    sudo docker stop "$running"
 fi
 sudo docker run -d --name myInginx -p 80:80 nginx
