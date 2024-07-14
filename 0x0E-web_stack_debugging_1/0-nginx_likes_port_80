@@ -3,10 +3,6 @@
 # chnage the port to 80
 FILEPATH="/etc/nginx/sites-available/default"
 sudo apt update
-sudo apt -y install nginx
-if grep -q "listen" "$FILEPATH"; then
-    sudo sed -i 's/listen .*/listen 80;/' $FILEPATH
-else
-    sudo sed -i '/server {/a \\t \tlisten 80;' $FILEPATH
-fi
-sudo service nginx restart
+sudo apt -y install docker
+sudo docker
+sudo docker run -d --name testnginx -p 80:80 nginx
