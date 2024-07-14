@@ -1,19 +1,4 @@
 #!/usr/bin/env bash
 # to fix the problem with need to make sure the container port is mapped to host port
-sudo apt-get update > /dev/null
-sudo apt-get -y install > /dev/null
-sudo tee /etc/nginx/sites-available/default > /dev/null <<EOF
-server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
-
-        server_name _;
-
-        location / {
-            root /var/www/html;
-            index index.html index.htm;
-        }
-EOF
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
-sudo rm /etc/nginx/sites-enabled/default
-sudo ln -s /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
