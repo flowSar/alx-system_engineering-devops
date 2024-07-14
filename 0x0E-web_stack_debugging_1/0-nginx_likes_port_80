@@ -3,6 +3,8 @@
 # chnage the port to 80
 sudo apt update
 sudo apt -y install docker
-sudo docker
-sudo docker run -d --name testnginx -p 80:80 nginx
-
+running=$(sudo docker ps -q)
+if "$running" != ''; then
+    sudo docker stop $running
+fi
+sudo docker run -d --name myInginx -p 80:80 nginx
