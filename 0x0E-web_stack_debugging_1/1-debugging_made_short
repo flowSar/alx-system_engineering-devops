@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-# remove old file and copy file configuration from /etc/nginx/sites-enabled/default
-mv /etc/nginx/sites-enabled/default /etc/nginx/sites-enabled/default.old
-ln -s /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
+# kill nginx process and change port if it 8080 to 80
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+service nginx restart
+pkill -o nginx
