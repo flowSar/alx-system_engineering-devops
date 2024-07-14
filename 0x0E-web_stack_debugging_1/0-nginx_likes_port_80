@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # to fix the problem with need to make sure the container port is mapped to host port
+sudo apt-get update > /dev/null
+sudo apt-get -y install > /dev/null
 sudo tee /etc/nginx/default > /dev/null <<EOF
 server {
         listen 80 default_server;
