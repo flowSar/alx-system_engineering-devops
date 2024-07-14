@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # remove old file and copy file configuration from /etc/nginx/sites-enabled/default
 mv /etc/nginx/sites-enabled/default /etc/nginx/sites-enabled/default.old
-ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
