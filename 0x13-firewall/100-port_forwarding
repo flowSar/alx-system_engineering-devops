@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# fowarding the trfic from port 80 to port 8080 by usning firewall , ufw and iptables combined
+
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+
+sudo sh -c "iptables-save > /etc/iptables/rules.v4"
+
+sudo ufw enable
+
+sudo ufw allow 8080
