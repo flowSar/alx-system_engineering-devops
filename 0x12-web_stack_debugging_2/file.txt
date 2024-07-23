@@ -1,0 +1,7 @@
+user nginx;
+
+http {
+ 	listen 8080;
+    hello;
+
+}

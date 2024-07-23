@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# update user and port of nginx 
+FILECONFIG="/etc/nginx/nginx.conf"
+
+if ! grep -q "listen" "$FILECONFIG"; then
+    sudo sed -i "/http {/a\ \\tlisten 8080;" "$FILECONFIG"
+else
+    sudo sed -i "s/listen .*/listen 8080;/" "$FILECONFIG"
+fi
+if ! grep -q "^user" "$FILECONFIG"; then
+    sudo sed -i '1i\user nginx;' "$FILECONFIG"
+else
+    sudo sed -i 's/^user.*/user nginx;/' "$FILECONFIG"
+fi
+sudo service nginx restart
