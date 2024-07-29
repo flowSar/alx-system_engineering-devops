@@ -30,7 +30,7 @@ def main():
         print('Employee {} is done with tasks({}/{}):'
               .format(EMPLOYEE_NAME, task_completed, tasksNumber))
         for task in tasks:
-            print('     {}'.format(task))
+            print('\t{}'.format(task))
 
 
 if __name__ == "__main__":
