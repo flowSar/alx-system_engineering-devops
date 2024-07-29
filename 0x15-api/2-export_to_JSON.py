@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""fetch data from API and save it on csv file"""
+"""fetch data from API and save it on json file"""
 import json
 import requests
 import sys
