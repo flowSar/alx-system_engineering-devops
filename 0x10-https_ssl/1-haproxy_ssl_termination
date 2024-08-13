@@ -1,1 +1,12 @@
-#!/usr/bin/env bash 
+
+frontend http_front
+    bind *:443 ssl crt /etc/haproxy/certs/www.realsar.tech.pem
+    redirect scheme https code 301 if !{ ssl_fc }
+    mode http
+    default_backend webservers
+
+backend webservers
+    balance roundrobin
+    mode http
+    server 269106-web-01 35.175.64.12:80 check
+    server 269106-web-02 18.234.192.156:80 check
