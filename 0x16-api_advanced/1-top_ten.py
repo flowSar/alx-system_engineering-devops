@@ -3,13 +3,19 @@
 import requests
 
 
+headers = {"User-Agent": "My-User-Agent"}
+
+
 def top_ten(subreddit):
     """fetch and print 10 hot posts on reddit using reddit API"""
     params = {
         'limit': 8,
     }
     api_url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
-    response = requests.get(api_url, allow_redirects=False, params=params)
+    response = requests.get(api_url,
+                            headers=headers,
+                            params=params,
+                            allow_redirects=False)
 
     if response.status_code == 200:
         data = response.json()
@@ -25,4 +31,3 @@ def top_ten(subreddit):
             print(title)
     else:
         print(None)
-top_ten('programming')

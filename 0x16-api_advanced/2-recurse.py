@@ -3,6 +3,9 @@
 import requests
 
 
+headers = {"User-Agent": "My-User-Agent"}
+
+
 def recurse(subreddit, hot_list=[], after=None):
     """fetch all hot posts"""
     params = {
@@ -10,7 +13,9 @@ def recurse(subreddit, hot_list=[], after=None):
         'after': after
     }
     api_url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
-    response = requests.get(api_url, allow_redirects=False, params=params)
+    response = requests.get(api_url, headers=headers,
+                            params=params,
+                            allow_redirects=False)
     if response.status_code != 200:
         return hot_list
 
