@@ -2,16 +2,13 @@
 """fetch hot posts from reddit API"""
 import requests
 
-params = {
-    'limit': 100,
-    'count': 0,
-    'after': None
-}
 
-
-def recurse(subreddit, hot_list=[]):
+def recurse(subreddit, hot_list=[], after=None):
     """fetch all hot posts"""
-
+    params = {
+        'limit': 100,
+        'after': after
+    }
     api_url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     response = requests.get(api_url, allow_redirects=False, params=params)
     if response.status_code != 200:
@@ -25,4 +22,4 @@ def recurse(subreddit, hot_list=[]):
         hot_list.append(title)
         print(title)
 
-    recurse(subreddit, hot_list)
+    recurse(subreddit, hot_list, data['data'].get('after'))
