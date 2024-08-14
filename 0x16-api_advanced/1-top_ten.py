@@ -6,7 +6,7 @@ import requests
 def top_ten(subreddit):
     """fetch and print 10 hot posts on reddit using reddit API"""
     api_url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
-    response = requests.get(api_url)
+    response = requests.get(api_url, allow_redirects=False)
 
     if response.status_code == 200:
         data = response.json()

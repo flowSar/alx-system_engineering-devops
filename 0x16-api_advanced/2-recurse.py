@@ -13,7 +13,7 @@ def recurse(subreddit, hot_list=[]):
     """fetch all hot posts"""
 
     api_url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
-    response = requests.get(api_url, params=params)
+    response = requests.get(api_url, allow_redirects=False, params=params)
     if response.status_code != 200:
         return hot_list
 
